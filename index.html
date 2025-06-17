@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Autopec Logistics | Premium Vehicle Services</title>
     <link
       rel="stylesheet"
@@ -29,19 +32,19 @@
         background-color: var(--light);
         color: var(--dark);
         line-height: 1.6;
+        overflow-x: hidden;
       }
 
       .container {
         max-width: 1400px;
         margin: 0 auto;
-        padding: 0 40px;
+        padding: 0 20px;
       }
 
       /* Header */
       header {
-        background: linear-gradient(135deg, var(--primary), #1b5e20);
         color: white;
-        padding: 4rem 0;
+        padding: 3rem 0;
         position: relative;
         overflow: hidden;
       }
@@ -56,12 +59,19 @@
       }
 
       .logo {
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight: 700;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .logo img {
+        max-width: 160px;
+        height: auto;
       }
 
       .logo-icon {
@@ -69,11 +79,12 @@
       }
 
       .tagline {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         opacity: 0.9;
         max-width: 800px;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         font-weight: 300;
+        padding: 0 10px;
       }
 
       .header-bg {
@@ -85,42 +96,42 @@
         background-image: url("./images/i1.jpeg");
         background-size: cover;
         background-position: center;
-        opacity: 0.15;
         z-index: 1;
       }
 
       /* Hero Section */
       .hero {
-        padding: 6rem 0;
+        padding: 3rem 0;
         background-color: white;
       }
 
       .hero-content {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
         align-items: center;
       }
 
       .hero-text h1 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
         color: var(--primary);
-        line-height: 1.2;
+        line-height: 1.3;
       }
 
       .hero-text p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
         color: var(--gray);
       }
 
       .hero-image {
-        border-radius: 16px;
+        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-        height: 500px;
+        box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+        height: 300px;
         position: relative;
+        order: -1;
       }
 
       .hero-image::before {
@@ -145,23 +156,19 @@
         transition: transform 0.5s ease;
       }
 
-      .hero-image:hover img {
-        transform: scale(1.05);
-      }
-
       /* Contact Section */
       .contact {
-        padding: 6rem 0;
+        padding: 3rem 0;
         background-color: white;
       }
 
       .section-title {
         text-align: center;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
       }
 
       .section-title h2 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         color: var(--primary);
         position: relative;
         display: inline-block;
@@ -170,50 +177,50 @@
       .section-title h2::after {
         content: "";
         position: absolute;
-        bottom: -15px;
+        bottom: -12px;
         left: 50%;
         transform: translateX(-50%);
-        width: 100px;
-        height: 4px;
+        width: 80px;
+        height: 3px;
         background-color: var(--secondary);
         border-radius: 2px;
       }
 
       .contact-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
       }
 
       .contact-info {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
       }
 
       .contact-item {
         display: flex;
         align-items: flex-start;
-        gap: 1.5rem;
+        gap: 1rem;
       }
 
       .contact-icon {
         background-color: var(--primary);
         color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
 
       .contact-text h3 {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem;
         color: var(--primary);
-        font-size: 1.3rem;
+        font-size: 1.1rem;
       }
 
       .contact-text p,
@@ -221,7 +228,8 @@
         color: var(--gray);
         text-decoration: none;
         transition: color 0.3s;
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
       }
 
       .contact-text a:hover {
@@ -230,20 +238,21 @@
 
       .social-links {
         display: flex;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
+        gap: 1rem;
+        margin-top: 1rem;
       }
 
       .social-link {
         color: white;
-        width: 50px;
-        height: 50px;
-        border-radius: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.3s;
-        font-size: 1.2rem;
+        font-size: 1rem;
+        background-color: var(--primary);
       }
 
       .social-link:hover {
@@ -252,10 +261,10 @@
       }
 
       .map-container {
-        height: 500px;
-        border-radius: 16px;
+        height: 300px;
+        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
         position: relative;
       }
 
@@ -285,51 +294,48 @@
         background-position: center;
       }
 
-      .map-placeholder:hover {
-        background-color: #e0e0e0;
-      }
-
       .map-overlay {
         background-color: rgba(0, 0, 0, 0.7);
         color: white;
-        padding: 20px;
-        border-radius: 10px;
+        padding: 15px;
+        border-radius: 8px;
         text-align: center;
-        max-width: 80%;
+        max-width: 90%;
       }
 
       .map-overlay i {
-        font-size: 2rem;
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
       }
 
       .map-overlay h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
       }
 
       .map-overlay p {
         color: #e0e0e0;
         margin-bottom: 0;
+        font-size: 0.9rem;
       }
 
       /* Footer */
       footer {
         background-color: var(--dark);
         color: white;
-        padding: 4rem 0 2rem;
+        padding: 2rem 0 1rem;
       }
 
       .footer-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 3rem;
-        margin-bottom: 3rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
       }
 
       .footer-column h3 {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
         color: var(--secondary);
       }
 
@@ -337,14 +343,14 @@
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 1.2rem;
+        gap: 0.8rem;
       }
 
       .footer-links a {
         color: #e0e0e0;
         text-decoration: none;
         transition: all 0.3s;
-        font-size: 1.1rem;
+        font-size: 0.95rem;
       }
 
       .footer-links a:hover {
@@ -354,10 +360,10 @@
 
       .copyright {
         text-align: center;
-        padding-top: 2rem;
+        padding-top: 1.5rem;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         color: #bdbdbd;
-        font-size: 1rem;
+        font-size: 0.85rem;
       }
 
       /* Modern UI Elements */
@@ -365,85 +371,170 @@
         display: inline-block;
         background-color: var(--primary);
         color: white;
-        padding: 15px 30px;
+        padding: 12px 25px;
         border-radius: 50px;
         text-decoration: none;
         font-weight: 600;
         transition: all 0.3s;
         border: none;
         cursor: pointer;
-        font-size: 1.1rem;
+        font-size: 1rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 0.5rem;
       }
 
       .btn:hover {
         background-color: #1b5e20;
         transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
       }
 
-      /* Responsive */
-      @media (max-width: 1024px) {
+      /* Responsive Improvements */
+      @media (min-width: 480px) {
+        .container {
+          padding: 0 25px;
+        }
+
+        .hero-image {
+          height: 350px;
+        }
+
+        .map-container {
+          height: 350px;
+        }
+      }
+
+      @media (min-width: 768px) {
         .container {
           padding: 0 30px;
         }
 
-        .hero-content,
-        .contact-container {
-          grid-template-columns: 1fr;
+        header {
+          padding: 4rem 0;
+        }
+
+        .logo {
+          font-size: 2.5rem;
+          gap: 15px;
+        }
+
+        .tagline {
+          font-size: 1.3rem;
+          padding: 0;
+        }
+
+        .hero {
+          padding: 4rem 0;
+        }
+
+        .hero-content {
+          grid-template-columns: 1fr 1fr;
           gap: 3rem;
+        }
+
+        .hero-text h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero-text p {
+          font-size: 1.1rem;
         }
 
         .hero-image {
           height: 400px;
-          order: -1;
+          order: 0;
         }
 
-        .hero-text h1 {
-          font-size: 2.5rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .logo {
-          font-size: 2.5rem;
-        }
-
-        .tagline {
-          font-size: 1.2rem;
-        }
-
-        .hero-text h1 {
-          font-size: 2rem;
+        .contact {
+          padding: 4rem 0;
         }
 
         .section-title h2 {
           font-size: 2rem;
         }
+
+        .contact-container {
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+        }
+
+        .map-container {
+          height: 400px;
+        }
+
+        .footer-content {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
 
-      @media (max-width: 480px) {
-        .container {
-          padding: 0 20px;
+      @media (min-width: 1024px) {
+        .hero-content {
+          gap: 4rem;
         }
 
-        header {
-          padding: 3rem 0;
-        }
-
-        .logo {
-          font-size: 2rem;
+        .hero-text h1 {
+          font-size: 2.5rem;
         }
 
         .hero-image {
-          height: 300px;
+          height: 450px;
         }
 
-        .contact-icon,
-        .social-link {
-          width: 45px;
-          height: 45px;
+        .contact-info {
+          gap: 2rem;
         }
+
+        .contact-item {
+          gap: 1.5rem;
+        }
+
+        .contact-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 1.2rem;
+        }
+
+        .contact-text h3 {
+          font-size: 1.2rem;
+        }
+
+        .contact-text p,
+        .contact-text a {
+          font-size: 1rem;
+        }
+
+        .footer-content {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .hero-text h1 {
+          font-size: 3rem;
+        }
+
+        .hero-image {
+          height: 500px;
+        }
+
+        .map-container {
+          height: 500px;
+        }
+      }
+
+      /* Touch target improvements */
+      a,
+      button,
+      .btn,
+      .social-link {
+        touch-action: manipulation;
+      }
+
+      /* Prevent zooming on input focus */
+      input,
+      select,
+      textarea {
+        font-size: 16px;
       }
     </style>
     <link
@@ -456,7 +547,7 @@
       <div class="header-bg"></div>
       <div class="container header-content">
         <div class="logo">
-          <img src="./images/i4.png" alt="Auto repair shop" />
+          <img src="./images/i3.png" alt="Autopec Logistics logo" />
           <span>Autopec Logistics</span>
         </div>
         <p class="tagline">
@@ -486,7 +577,7 @@
           <a href="#contact" class="btn">Contact Us Today</a>
         </div>
         <div class="hero-image">
-          <img src="./images/i2.jpeg" alt="Auto repair shop" />
+          <img src="./images/i2.jpeg" alt="Auto repair shop interior" />
         </div>
       </div>
     </section>
@@ -561,14 +652,19 @@
                   <a
                     href="https://www.facebook.com/Autopeccars/"
                     class="social-link"
+                    target="_blank"
                     ><i class="fab fa-facebook-f"></i
                   ></a>
-                  <a href="https://x.com/autopecgarage" class="social-link"
+                  <a
+                    href="https://x.com/autopecgarage"
+                    class="social-link"
+                    target="_blank"
                     ><i class="fab fa-twitter"></i
                   ></a>
                   <a
                     href="https://www.instagram.com/autopec.logistics?igsh=MXUwNm56cWlvOGU2Zg==&utm_source=ig_contact_invite"
                     class="social-link"
+                    target="_blank"
                     ><i class="fab fa-instagram"></i
                   ></a>
                 </div>
@@ -584,6 +680,7 @@
               style="border: none"
               allowfullscreen
               loading="lazy"
+              title="Autopec Logistics Location Map"
             >
             </iframe>
           </div>
@@ -636,7 +733,14 @@
       };
 
       // Alternative for modern browsers (optional)
-      history.scrollRestoration = "manual";
+      if (history.scrollRestoration) {
+        history.scrollRestoration = "manual";
+      }
+
+      // Improve touch experience
+      document.addEventListener("touchstart", function () {}, {
+        passive: true,
+      });
     </script>
   </body>
 </html>
