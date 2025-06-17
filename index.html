@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autopec Logistics | Premium Vehicle Services</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #2e7d32; /* Updated to green */
+        --secondary: #ffab00;
+        --accent: #ff5722;
+        --light: #f8f9fa;
+        --dark: #212121;
+        --gray: #757575;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        background-color: var(--light);
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, var(--primary), #1b5e20);
+        color: white;
+        padding: 4rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .logo {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .logo-icon {
+        color: var(--secondary);
+      }
+
+      .tagline {
+        font-size: 1.5rem;
+        opacity: 0.9;
+        max-width: 800px;
+        margin-bottom: 3rem;
+        font-weight: 300;
+      }
+
+      .header-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("./images/i1.jpeg");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.15;
+        z-index: 1;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 6rem 0;
+        background-color: white;
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        color: var(--primary);
+        line-height: 1.2;
+      }
+
+      .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: var(--gray);
+      }
+
+      .hero-image {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        height: 500px;
+        position: relative;
+      }
+
+      .hero-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.3)
+        );
+        z-index: 1;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .hero-image:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 6rem 0;
+        background-color: white;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background-color: var(--secondary);
+        border-radius: 2px;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .contact-icon {
+        background-color: var(--primary);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 1.2rem;
+      }
+
+      .contact-text h3 {
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+        font-size: 1.3rem;
+      }
+
+      .contact-text p,
+      .contact-text a {
+        color: var(--gray);
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 1.1rem;
+      }
+
+      .contact-text a:hover {
+        color: var(--primary);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .social-link {
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        font-size: 1.2rem;
+      }
+
+      .social-link:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+      }
+
+      .map-container {
+        height: 500px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        position: relative;
+      }
+
+      .map-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+      }
+
+      .map-placeholder {
+        width: 100%;
+        height: 100%;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        transition: all 0.3s ease;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.1)
+          ),
+          url("https://maps.googleapis.com/maps/api/staticmap?center=-1.2824,36.8695&zoom=16&size=800x500&maptype=roadmap&markers=color:red%7C-1.2824,36.8695");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .map-placeholder:hover {
+        background-color: #e0e0e0;
+      }
+
+      .map-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 80%;
+      }
+
+      .map-overlay i {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .map-overlay h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .map-overlay p {
+        color: #e0e0e0;
+        margin-bottom: 0;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 4rem 0 2rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .footer-column h3 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: var(--secondary);
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      .footer-links a {
+        color: #e0e0e0;
+        text-decoration: none;
+        transition: all 0.3s;
+        font-size: 1.1rem;
+      }
+
+      .footer-links a:hover {
+        color: var(--secondary);
+        padding-left: 5px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #bdbdbd;
+        font-size: 1rem;
+      }
+
+      /* Modern UI Elements */
+      .btn {
+        display: inline-block;
+        background-color: var(--primary);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn:hover {
+        background-color: #1b5e20;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .container {
+          padding: 0 30px;
+        }
+
+        .hero-content,
+        .contact-container {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+
+        .hero-image {
+          height: 400px;
+          order: -1;
+        }
+
+        .hero-text h1 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .logo {
+          font-size: 2.5rem;
+        }
+
+        .tagline {
+          font-size: 1.2rem;
+        }
+
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+
+        .section-title h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 0 20px;
+        }
+
+        header {
+          padding: 3rem 0;
+        }
+
+        .logo {
+          font-size: 2rem;
+        }
+
+        .hero-image {
+          height: 300px;
+        }
+
+        .contact-icon,
+        .social-link {
+          width: 45px;
+          height: 45px;
+        }
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-bg"></div>
+      <div class="container header-content">
+        <div class="logo">
+          <img src="./images/i4.png" alt="Auto repair shop" />
+          <span>Autopec Logistics</span>
+        </div>
+        <p class="tagline">
+          Your trusted partner for comprehensive vehicle maintenance and repair
+          services in Nairobi
+        </p>
+      </div>
+    </header>
+
+    <section class="hero" id="about">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Premium Vehicle Services in Nairobi</h1>
+          <p>
+            Autopec Logistics is a leading automotive service provider in
+            Nairobi, offering a wide range of maintenance and repair solutions
+            to keep your vehicle running at peak performance. Our team of
+            certified technicians uses state-of-the-art equipment to deliver
+            exceptional service with a commitment to quality and customer
+            satisfaction.
+          </p>
+          <p>
+            Located conveniently on Kangundo Road, we serve both individual
+            vehicle owners and corporate fleets with reliable, efficient, and
+            affordable automotive solutions.
+          </p>
+          <a href="#contact" class="btn">Contact Us Today</a>
+        </div>
+        <div class="hero-image">
+          <img src="./images/i2.jpeg" alt="Auto repair shop" />
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Email</h3>
+                <a href="mailto:autopeclogistics@gmail.com"
+                  >autopeclogistics@gmail.com</a
+                >
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Phone</h3>
+                <a href="tel:+254722746454">0722 746 454</a><br />
+                <a href="tel:+254795216630">0795 216 630</a><br />
+                <a href="tel:+254716489233">0716 489 233</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Website</h3>
+                <a href="https://www.autopeclogistics.co.ke/" target="_blank"
+                  >www.autopeclogistics.co.ke</a
+                >
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Address</h3>
+                <p>
+                  <a
+                    href="https://www.google.com/maps/dir//Nairobi/@-1.2704155,36.8597481,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x182f152443e5846b:0xe229d40e6667f7cf!2m2!1d36.9009272!2d-1.2705102?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    >Kangundo Rd, Nairobi<br />(Opposite Coca Cola Preform
+                    Plant)</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-share-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                  <a
+                    href="https://www.facebook.com/Autopeccars/"
+                    class="social-link"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="https://x.com/autopecgarage" class="social-link"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a
+                    href="https://www.instagram.com/autopec.logistics?igsh=MXUwNm56cWlvOGU2Zg==&utm_source=ig_contact_invite"
+                    class="social-link"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-container">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=36.8959%2C-1.2735%2C36.9059%2C-1.2675&layer=mapnik&marker=-1.2705%2C36.9009"
+              width="100%"
+              height="100%"
+              style="border: none"
+              allowfullscreen
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Autopec Logistics</h3>
+            <p>
+              Your trusted partner for comprehensive vehicle maintenance and
+              repair services in Nairobi.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact Info</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="mailto:autopeclogistics@gmail.com"
+                  >autopeclogistics@gmail.com</a
+                >
+              </li>
+              <li><a href="tel:+254722746454">0722 746 454</a></li>
+              <li>Kangundo Rd, Nairobi</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 Autopec Logistics. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Scroll to top on page reload
+      window.onload = function () {
+        window.scrollTo(0, 0);
+      };
+
+      // Alternative for modern browsers (optional)
+      history.scrollRestoration = "manual";
+    </script>
+  </body>
+</html>
